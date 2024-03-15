@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>1-04 변수 선언 (var, let, const)</title>
+    </head>
+    <body>
+        <script>
+            //var
+            var x = 5;
+            var y = 6;
+            var z = x + y;
+
+            console.log("x = " + x);
+            console.log("y = " + y);
+            console.log("z = " + z);
+
+            var x = 23;
+            var z = x + 1;
+            document.write("z = " + z);
+
+            // var는 변수를 다시 선언할 수 있음 => 불편함 때문에 거의 안 씀
+
+            //let
+            let x1 = 5;
+            let y1 = 6;
+            let z1 = x1 + y1;
+
+            console.log("x1 = " + x1);
+            console.log("y1 = " + y1);
+            console.log("z1 = " + z1);
+
+            // let x = 23;
+            // let z = x + 1;
+            document.write("z1 = " + z1);
+
+            // let은 변수를 다시 선언하는 것이 안 됨
+            // Uncaught SyntaxError: Identifier 'x' has already been declared
+
+            //const
+            const x2 = 5;
+            const y2 = 6;
+            const z2 = x2 + y2;
+            
+            console.log("x2 = " + x2);
+            console.log("y2 = " + y2);
+            console.log("z2 = " + z2);
+
+            x2 = 23;
+            z2 = x2 + 1;
+            document.write("z2 = " + z2);
+            // const는 값을 수정하는 것이 안 됨
+            // Uncaught TypeError: Assignment to constant variable.
+
+        </script>
+    </body>
+</html>
