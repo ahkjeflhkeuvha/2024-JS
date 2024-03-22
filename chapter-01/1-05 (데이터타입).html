@@ -32,6 +32,7 @@
             console.log(n1);
 
             // object (객체)
+            // 선언 후 초기화
             let person1 = {};
             person1.firstname = "오";
             person1.lastname = "지은";
@@ -39,6 +40,89 @@
 
             console.log(person1)
 
+            // 선언과 동시에 초기화
+            let person2 = {
+                firstname : "오",
+                lastname : "지은", 
+                age : 20
+            }
+
+            console.log(person2)
+            
+            let person3 = {};
+            person3["firstName"] = "홍"
+            person3["lastName"] = "길동"
+            person3["age"] = 21
+
+            console.log(person3)
+
+            person2.email = "w2317@e-mirim.hs.kr"
+            console.log(person2)
+
+            console.log(person1.firstname + "\t" + person1.lastname + "\t" + person1.age)
+            person1.school = "미림"
+            console.log(person1)
+
+            document.write(person1.firstname)
+            document.write(person2.lastname)
+            document.write(person3.age)
+
+            // 배열 - Array
+            let car = ["현대", "기아", "볼보", "테슬라", "지프"];
+            console.log(car[0])
+            console.log(car[1])
+            console.log(car[2])
+            console.log(car[3])
+            console.log(car[4])
+            
+            let num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            console.log(num[0])
+            console.log(num[2])
+            console.log(num[4])
+            console.log(num[6])
+
+            let arr = ["현대", 5, 2.05, true, undefined, null]
+            // js는 한 번에 여러가지 타입을 저장할 수 있음
+
+            let objarr = [person1, person2, person3]
+            console.log(objarr[0])
+            console.log(objarr[1])
+            console.log(objarr[2])
+
+            let arr3 = []
+            arr3[0] = 23
+            arr3[1] = "최"
+            arr3[2] = true
+
+            console.log(arr3)
+
+            let arr4 = []
+            arr4.push("a")
+            arr4.push(123)
+            arr4.push(undefined)
+            console.log(arr4)
+
+            document.write("<br>")
+            for(let i = 0; i<arr4.length; i++) {
+                console.log(arr4[i])
+                document.write(arr4[i] + "\t")
+            }
+
+            // Boolean - 참, 거짓
+            let isAdult = true
+            let num1 = 5
+            let num2 = 7
+
+            console.log(num1 > num2)
+
+            console.log(typeof num1)
+            console.log(typeof isAdult)
+            console.log(typeof person1)
+            console.log(typeof name1)
+            console.log(typeof arr4)
+            // js는 배열을 object로 사용함!!!!!!!
+
+            
         </script>
     </body>
 </html>
