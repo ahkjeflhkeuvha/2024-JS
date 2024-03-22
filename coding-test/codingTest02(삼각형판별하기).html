@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){
+                let answer
+                let max
+                let sum = a + b + c
+
+                // 내 풀이
+                max = (a > b) ? a : b
+                if(max < c) max = c
+
+                if(max < sum - max) answer = "yes"
+                else answer = "no"
+                
+                return answer
+            }
+            console.log(solution(6, 7, 11));
+            console.log(solution(13, 33, 17));
+        </script>
+    </body>
+</html>
