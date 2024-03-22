@@ -6,13 +6,22 @@
         <script>
             function solution(a, b, c){
                 let answer
-                let max
-                let sum = a + b + c
-
+                
                 // 내 풀이
-                max = (a > b) ? a : b
+                // let max
+                // let sum = a + b + c
+                // max = (a > b) ? a : b
+                // if(max < c) max = c
+
+                // if(max < sum - max) answer = "yes"
+                // else answer = "no"
+
+                // 선생님 풀이
+                let max = (a > b) ? a : b
                 if(max < c) max = c
 
+                let sum = a + b + c
+                
                 if(max < sum - max) answer = "yes"
                 else answer = "no"
                 
