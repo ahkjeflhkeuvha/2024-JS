@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>세 수 중 최소값</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){
+                let answer
+                
+
+                // 내 풀이
+                // if(a < b && a < c) answer = a
+                // else if(b < a && b < c) answer = b
+                // else answer = c
+
+                // 선생님 풀이
+                if(a < b) answer = a
+                else answer = b
+                if(answer > c) answer = c
+
+                return answer
+            }
+            console.log(solution(61, 5 ,13));
+        </script>
+    </body>
+</html>

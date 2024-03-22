@@ -46,15 +46,20 @@
             //    case 6: document.write('this is saturday'); break;
             // }
 
-            if(day === 0) document.write('this is sunday')
-            else if(day === 1) document.write('this is monday')
-            else if(day === 2) document.write('this is tuesday')
-            else if(day === 3) document.write('this is wednesday')
-            else if(day === 4) document.write('this is thursday')
-            else if(day === 5) document.write('this is friday')
-            else if(day === 6) document.write('this is saturday')
+            // if(day === 0) document.write('this is sunday')
+            // else if(day === 1) document.write('this is monday')
+            // else if(day === 2) document.write('this is tuesday')
+            // else if(day === 3) document.write('this is wednesday')
+            // else if(day === 4) document.write('this is thursday')
+            // else if(day === 5) document.write('this is friday')
+            // else if(day === 6) document.write('this is saturday')
 
+            var id = prompt('아이디를 입력해주세요')
+            var pw = prompt('비밀번호를 입력해주세요')
 
+            if(id === 'jieun' && pw === '1234') alert(id + '님 로그인되었습니다.')
+            else if(id === 'jieun' && pw !== '1234') alert(id + '님 비밀번호를 다시 입력해주세요')
+            else alert('회원가입을 해주세요')
         </script>
     </body>
 </html>
