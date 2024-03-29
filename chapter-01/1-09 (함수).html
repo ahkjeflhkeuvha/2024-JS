@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>1-09 함수 (function)</title>
+    </head>
+    <body>
+        <script>
+            function taxReckon(money, taxPer){
+                return money * taxPer
+            }
+
+            console.log(taxReckon(10, 0.1))
+            console.log(taxReckon(50, 0.2))
+
+            function calculator(a, b, operator){
+                switch(operator) {
+                    case '+' : return a+b; break;
+                    case '-' : return a-b; break;
+                    case '*' : return a*b; break;
+                    case '/' : return a/b; break;
+                    default : return 0
+                }
+            }
+
+            console.log(calculator(1, 2, '+'))
+            console.log(calculator(1, 2, '-'))
+            console.log(calculator(1, 2, '*'))
+            console.log(calculator(1, 2, '/'))
+            
+        </script>
+    </body>
+</html>
