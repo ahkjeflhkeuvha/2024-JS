@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>String 내장 함수</title>
+    </head>
+    <body>
+        <script>
+            // length - 문자열 길이 return
+            var txt = "MIRIM"
+            console.log(txt.length)
+
+            // indexOf - 문자의 위치를 찾아 return
+            var txt = "please locate where 'locate'"
+            console.log(txt.indexOf('locate')) // 첫 번째 locate의 위치 return
+            console.log(txt.indexOf('cho') ) // 없는 요소는 -1을 return
+
+            if(txt.indexOf("locate") > -1 ) console.log('locate is here')
+            else console.log('locate is not here')
+
+            console.log(txt.lastIndexOf('locate')) // 마지막에 있는 locate의 위치
+
+            // search - 문자의 위치를 찾아 return
+            console.log(txt.search('locate')) // 첫 번째 locate의 위치 return
+
+            // ***** slice - 문자열 일부 가져오기 (시작 인덱스, 끝 인덱스 - 1)
+            var txt = 'apple, banana, kiwi, peach'
+            console.log(txt.slice(7,13)) // banana
+            console.log(txt.slice(7)) // banana, kiwi, peach
+            console.log(txt.slice(-12, -7)) // kiwi
+
+            // substring - 문자열 일부 가져오기 (시작인덱스, 끝 인덱스 - 1)
+            console.log(txt.substring(7, 13))
+            
+            // substr - 문자열 일부 가져오기 (시작인덱스, 가져올 문자 수)
+            console.log(txt.substr(7, 6))
+
+            var person1 = "2007-8-28"
+            
+            var year = person1.substring(0, person1.indexOf('-'))
+            var month = person1.substring(person1.indexOf('-') + 1, person1.lastIndexOf('-'))
+            var day = person1.substring(person1.lastIndexOf('-') + 1, person1.length)
+
+            console.log(year + "\t" + month + "\t" + day)
+
+            // replace - 단어 바꾸기
+            var txt = "please visit here"
+            var txt2 = txt.replace('visit', 'come')
+            console.log(txt + "\t" + txt2)
+            
+            var txt = "please visit here here here here"
+            var txt2 = txt.replace('here', 'there')     
+            console.log(txt2)
+
+            var txt2 = txt.replaceAll('here', 'there')
+            console.log(txt2)
+
+            // 정규표현식
+            var txt = "please visit here here here here"
+            var txt1 = txt.replace(/here/g, 'there')
+            console.log(txt1)
+
+            var txt = "please visit heRe Here hEre herE"
+            var txt1 = txt.replace(/here/gi, 'there')
+            
+        </script>
+    </body>
+</html>
