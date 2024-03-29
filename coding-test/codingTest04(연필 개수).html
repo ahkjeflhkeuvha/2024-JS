@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(n){
+                let answer = parseInt(n/12)
+                
+                // 1번째 방법
+                // for(let i = 1; i<=n; i++){
+                //    if(i*12 >= n) {
+                //        answer = i
+                //        break
+                //    }
+                //}
+
+                // 2번째 방법
+                //if(n/12 !== 0) answer++
+                
+                //return answer
+                // return (n%12 > 0) ? Math.floor(n/12 + 1) : Math.floor(n/12)
+
+                return Math.ceil(n/12)
+            }
+            console.log(solution(25));
+            console.log(solution(36));
+            console.log(solution(45));
+            console.log(solution(178));
+
+            // Math.ceil() : 올림
+            // Math.floor() : 내림
+            // Math.
+        </script>
+    </body>
+</html>
