@@ -38,12 +38,44 @@
             for(var i in numbers){
                 // in은 배열의 index값을 넣음
                 console.log(i)
+                console.log(numbers[i]) // why? object 처리할 떄
             }
 
             for(var i of numbers){
                 // of는 배열의 요소값을 넣음
                 console.log(i)
             }
+
+            var person = {
+                firstName : "길동",
+                lastName : "홍",
+                age : 24
+            }
+
+            console.log(person.firstName)
+            console.log(person.lastName)
+            console.log(person.age)
+
+
+            for(var key in person){
+                console.log(key)
+                console.log(person[key])
+            } 
+
+            var cars = ["현대", "기아", "볼보", "벤츠"]
+            for(var car in cars){
+                console.log(car)
+            }
+
+            for(var car of cars){
+                console.log(car)
+            }
+
+            numbers.forEach(function(val, idx){
+                if(val%2 == 0) console.log(val)
+            })
+
+
 
             </script>
     </body>
