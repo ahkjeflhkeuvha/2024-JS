@@ -72,7 +72,41 @@
             var txt1 = txt.toLowerCase()
             console.log(txt1)
 
+            var txt1 = "Hello"
+            var txt2 = "world"
+            console.log(txt1 +txt2)
+            console.log(" ", txt1.concat(txt2))
+            console.log(txt1.concat(" ", "Hong"))
+
+            var str1 = "Hello"
+            var txt2 = "World"
+            console.log(str1.padStart(8, 0))
+            console.log(str1.padEnd(10, 'a'))
+            // 앞에 0을 채워넣어줌
+            // padEnd하면 뒤에 0을 채워 넣어줌
+
+            var str1 = str1.concat(txt2)
+            console.log(str1)
             
+            var str = "5"
+            console.log(str1.concat("8"))
+            
+
+            // charAt
+
+            // 특정한 값을 가지고 있는 지 확인
+            var str1 = "Hello World"
+            console.log(str1.charAt(0))
+            console.log(str1.charAt(6))
+            
+ 
+            // split 함수
+            var tags = "키보드, 기계식, 블루투스, 휠마우스, 광마우스"
+            var arr = tags.split(", ", -1)
+            console.log(arr)
+
+            var birthday = "2007-09-06"
+            console.log(birthday.split("-"))
         </script>
     </body>
 </html>
