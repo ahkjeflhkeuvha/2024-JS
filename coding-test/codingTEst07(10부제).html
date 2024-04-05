@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>10부제</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr, num){
+                let answer = 0
+
+                for(let n of arr){
+                    if(n%10 === num) answer++;
+                }
+                return answer
+            }
+            let arr = [25, 23, 11, 47, 53, 17, 33]
+            let arr1 = [12, 20, 54, 30, 80, 91, 30]
+            console.log(solution(arr, 3));
+            console.log(solution(arr1, 0))
+        </script>
+    </body>
+</html>

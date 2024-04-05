@@ -5,21 +5,22 @@
     <body>
         <script>
             function solution(arr){
-                let answer
-                let min = arr[0], sum = 0
+                let answer = []
+                let min = Number.MAX_SAFE_INTEGER, sum = 0
 
                 for(num of arr){
-                    if(num%2 == 1) {
+                    if(num%2 === 1) {
                         if(min > num) min = num;
                         sum += num
                     }
                 }
                 
-                console.log("홀수들의 합 : " + sum)
-                console.log("가장 작은 홀수의 값 : " + min)
-                return answer
+                // 배열은 push를 사용해 원소를 넣을 수 있다!!!
+
+                return [answer[0], answer[1]] = [min, sum]
             }
-            console.log(solution());
+            let arr = [12, 77, 36, 41, 53, 92, 85]
+            console.log(solution(arr));
         </script>
     </body>
 </html>
