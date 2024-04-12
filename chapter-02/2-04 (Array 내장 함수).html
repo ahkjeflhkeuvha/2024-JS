@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div id="div1"></div>
+        <script>
+            // toString() 
+            var fruits = ["딸기", "사과", "포도", "망고"]
+            console.log(fruits)
+            console.log(fruits.toString())
+
+            // join()
+            console.log(fruits.join("***")) // python이랑 다르구만.. python은 문자.join(배열)인데 여기는 배열.join(문자)
+            // var txt1 = 'apple<br>'
+            // txt1 += 'orange<br>'
+            // txt1 += 'grape<br>'
+
+            // console.log(txt1)
+            // document.getElementById('div1').innerHTML = txt1
+
+            var arr1 = []
+            arr1.push("apple")
+            arr1.push("orange")
+            arr1.push("grape")
+
+            console.log(arr1)
+            console.log(arr1.toString())
+            
+            var str1 = arr1.join("<br>")
+            document.getElementById('div1').innerHTML = str1
+            console.log(str1)
+
+            // pop() - 배열의 가장 마지막 항목을 제거하여 리턴
+            var fruits = ["딸기", "사과", "포도", "망고"]
+            console.log(fruits.pop()) // 망고가 리턴
+
+            // push() - 배열의 가장 마지막 항목에 새로운 값 추가
+            fruits.push("카카오")
+            console.log(fruits)
+
+            // shift() - 배열의 가장 첫번쨰 항목을 제거하여 리턴
+            var fruits = ["딸기", "사과", "포도", "망고"]
+            console.log(fruits.shift())
+
+            // unshift() - 배열의 가장 첫번째에 새로운 값 추가
+            var fruits = ["딸기", "사과", "포도", "망고"]
+            fruits.unshift("수박")
+            console.log(fruits)
+
+            // 배열 수정
+            fruits[0] = "레몬"
+            console.log(fruits)
+
+        </script>
+    </body>
+</html>
