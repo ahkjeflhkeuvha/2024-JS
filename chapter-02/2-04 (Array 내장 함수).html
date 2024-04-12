@@ -52,6 +52,111 @@
             fruits[0] = "레몬"
             console.log(fruits)
 
+            // length
+            console.log(fruits.length)
+
+            fruits[fruits.length - 1] = "샤인머스캣"
+            console.log(fruits)
+
+            // splice(a, b) - a는 시작 위치, b는 삭제할 항목의 수
+            var fruits = ["딸기", "사과", "포도", "망고"]
+            console.log(fruits.splice(1, 2)) // 사과, 포도
+            console.log(fruits) // 딸기, 망고
+            
+            fruits.splice(1, 0, "레몬", "키위") // splice는 배열 삭제와 함께 추가가 가능하다!!!!
+            console.log(fruits)
+
+            // concat() - 두개의 배열을 하나로~~
+            var arr1 = [1, 2, 3]
+            var arr2 = [4, 5, 6]
+            var arr3 = arr1.concat(arr2)
+            console.log(arr3)
+            console.log(arr1.concat(arr2))
+
+            // slice(a, b) - a부터 b-1까지의 항목 가져오기
+            var fruits = ["딸기", "사과", "포도", "망고"]
+            var last = fruits.slice(1)
+            var last1 = fruits.slice(2, 3)
+            console.log(fruits)
+            console.log(last)
+            console.log(last1)
+
+            // sort() - 오름차순 정렬
+            var num = [40, 100, 70, 21, 99]
+            var fruits = ["딸기", "사과", "포도", "망고"]
+            console.log(num.sort()) // 문자열로 치환해 정렬
+            console.log(fruits.sort())
+            console.log(num.sort(function(a, b){
+                if(a > b) return 1; // return true
+                else return -1; // return false
+            }))
+
+            console.log(num.sort(function(a, b){
+                if(a > b) return -1; // return false
+                else return 1; // return true
+            }))
+
+            console.log(num.sort(function(a, b){
+                return a-b // 오름차순
+            }))
+
+            console.log(num.sort(function(a, b){
+                return b-a // 오름차순
+            }))
+
+            console.log(num.reverse())
+
+            var person = [
+                {name:"ohjieun", point:7, age:18},
+                {name:"kimseoyeon", point:8, age:28},
+                {name:"leesori", point:5, age:19}
+            ]
+            
+            console.log(person.sort()) // 정렬 X..
+            console.log(person.sort(function(a, b){
+                if(a.name > b.name) return 1
+                else return -1
+            }))
+
+            console.log(person.sort(function(a, b){
+                if(a.point > b.point) return -1
+                else return 1
+            }))
+
+            console.log(person.sort(function(a, b){
+                return (a.name > b.name) ? -1 : -1
+            }))           
+
+            // ************************************ filter(함수) - 조건에 맞는 배열의 아이템만 찾아줘
+            var person = [
+                {name:"ohjieun", point:7, age:18 , city:"seoul"},
+                {name:"kimseoyeon", point:8, age:28, city:"gwangju"},
+                {name:"leesori", point:5, age:19, city:"seoul"},
+                {name:"leeseongmi", point:10, age:20, city:"jeonju"}
+            ]
+
+            var arr = person.filter((a)=>a.point>5)
+            console.log(arr)
+
+            var arr1 = person.filter((a)=>a.age < 20)
+            console.log(arr1)
+
+            var arr2 = person.filter((a)=>a.city==="gwangju")
+            console.log(arr2)
+
+            
+            // ************************************ reducez(a, b) - a:누산, b:현재값
+            var arr3 = [1, 2, 3, 4]
+            var total = arr3.reduce(function(a, c){
+                return a+c
+            })
+            console.log(total)
+            
+
+
+
+        
+
         </script>
     </body>
 </html>
