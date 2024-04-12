@@ -4,8 +4,38 @@
     </head>
     <body>
         <script>
+            // var는 재선언 가능, let은 재선언 불가능
             var x1 = true
-            var y1 = new Boolean(true) // 불리언 객체
+            var y1 = new Boolean(true) // 불리언 객체 -  Call by reference
+
+            console.log(typeof x1)
+            console.log(typeof y1)
+
+            console.log(x1 == y1) // true가 나온다고!!! 왜? x1은 true, y1도 true니까ㅜㅜㅜ
+            console.log(x1 === y1) // ===은 타입까지 비교한다구~~
+
+            var x2 = "abc"
+            var y2 = new String("abc")
+
+            console.log(typeof x2)
+            console.log(typeof y2)
+
+            console.log(x2 == y2)
+            console.log(x2 === y2)
+
+            console.log(Boolean(10 > 9)) // object 타입
+            console.log(10 > 9) // boolean 타입
+ 
+            var x = 0
+            console.log(x)
+            console.log(Boolean(x)) // false 
+
+            var x = ""
+            console.log(x)
+            console.log(Boolean(x))
+
+
+
         </script>
     </body>
 </html>
