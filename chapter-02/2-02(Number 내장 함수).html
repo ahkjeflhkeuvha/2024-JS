@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>20-02 Number 내장 함수</title>
+    </head>
+    <body>
+        <script>
+            var max = Number.MAX_SAFE_INTEGER
+            var min = Number.MIN_SAFE_INTEGER
+            console.log(max + "\t" + min)
+
+            // toString() - 정수를 String으로!
+            var x1 = 123
+            console.log(x1 + 1)
+            console.log(x1.toString() + 1)
+            console.log(x1.toString(2)) // 2진수
+            console.log(x1.toString(16)) // 16진수
+
+            // toFixed() - 지정된 소수점 자릿수까지 반올림으로 표기
+            var x1 = 12.723843
+            console.log(x1)
+            console.log(x1.toFixed(3))
+
+            // toPrecision() - 정수까지 포함된 자릿수
+            var x1 = 9.567
+            console.log(x1.toPrecision(2)) // 9.6
+
+            // Number() - String을 숫자로
+            var x1 = Number("10")
+            console.log(x1 + 1)
+
+            var x1 = Number(true)
+            console.log(x1)
+
+            console.log(Number("         10             "))
+            console.log(Number("12 6584 9 "))
+            console.log(Number(10.33)) 
+            console.log(Number("choi")) // X
+
+            // parseInt() - String을 정수로
+            console.log(parseInt("10") + 1)
+            console.log(parseInt("3.14")) // 숫자가 아니라 정수로 바꿔줌
+            console.log(parseInt("10  20  30")) // 첫번째만 정수로 바꿔줌
+            console.log(parseInt("24 years old"))
+            console.log(parseInt("years 24 old"))
+
+            // parseFloat() - String을 실수로
+            console.log(parseFloat("10")) // 10.0가 아니라 10이 나온당~
+            console.log(parseFloat("3.3") + 1)
+            console.log(parseFloat("125.6 15.4 6"))
+
+            // Number는 parseInt()와 parseFloat()를 합쳤다~
+        </script>
+    </body>
+</html>
