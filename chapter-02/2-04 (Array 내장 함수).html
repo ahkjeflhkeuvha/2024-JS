@@ -101,7 +101,7 @@
             }))
 
             console.log(num.sort(function(a, b){
-                return b-a // 오름차순
+                return b-a // 내림차순
             }))
 
             console.log(num.reverse())
@@ -129,7 +129,7 @@
 
             // ************************************ filter(함수) - 조건에 맞는 배열의 아이템만 찾아줘
             var person = [
-                {name:"ohjieun", point:7, age:18 , city:"seoul"},
+                {name:"ohjieun", point:7, age:18 , city:"gwangju"},
                 {name:"kimseoyeon", point:8, age:28, city:"gwangju"},
                 {name:"leesori", point:5, age:19, city:"seoul"},
                 {name:"leeseongmi", point:10, age:20, city:"jeonju"}
@@ -152,6 +152,24 @@
             })
             console.log(total)
             
+            // ************************************ map - 조건에 맞는 값을 넣을 때 원하는 형태로 변형할 수 있음
+            var person = [
+                {firstName : "재석", lastName : "유", email : "you@gmail.com"},
+                {firstName : "종국", lastName : "김", email : "gym@gmail.com"},
+                {firstName : "세찬", lastName : "양", email : "sheep@gmail.com"},
+                {firstName : "동훈", lastName : "하", email : "babyBoss@gmail.com"},
+                {firstName : "지효", lastName : "송", email : "Song@gmail.com"},
+            ]
+
+            var userList = person.map(function(user){
+                return {firstName : user.firstName, lastName : user.lastName, fullName : user.lastName + user.firstName}
+            })
+
+            console.log(userList)
+
+
+
+
 
 
 
