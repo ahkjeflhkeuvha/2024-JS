@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                let answer = []
+
+                var sum = arr.reduce((a,c)=> a+c)
+                // 140
+
+                for(let i = 0; i<arr.length; i++){
+                    for(let j = i + 1; j<arr.length; j++) {
+                        if(sum - arr[i] - arr[j] === 100) {
+                            arr.splice(arr.indexOf(arr[i]), 1)
+                            arr.splice(arr.indexOf(arr[j]), 1)
+                            break
+                        } 
+                    }
+                    if(arr.length == 7) break
+                }
+                return arr
+
+            }
+            var arr = [20, 7, 23, 19, 10, 15, 21, 5, 8]
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
