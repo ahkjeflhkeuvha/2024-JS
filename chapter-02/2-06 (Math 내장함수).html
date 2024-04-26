@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Math 내장 함수</title>
+    </head>
+    <body>
+        <script>
+            // Math
+            // round : 반올림
+            console.log(Math.round(4.9))
+            console.log(Math.round(4.4))
+
+            // ceil : 올림
+            console.log(Math.ceil(4.9))
+            console.log(Math.ceil(4.4))
+
+            // 화면에 글 몇 개 보이게 할까!??
+            console.log(Math.ceil(72/10))
+
+            // floor : 내림
+            console.log(Math.floor(4.9))
+            console.log(Math.floor(4.4))
+
+            // trunc : 정수만 리턴
+            console.log(Math.trunc(4.9))
+            console.log(Math.trunc(4.4))
+
+            console.log(Math.ceil(-4.1))
+            console.log(Math.floor(-4.1))
+            console.log(Math.trunc(-4.1))
+
+
+            // sign : 음수 -1, 0 - 0, 양수 - 1
+            console.log(Math.sign(-7))
+            console.log(Math.sign(0))
+            console.log(Math.sign(7))
+
+            // pow : 제곱
+            console.log(Math.pow(8, 2)) // 8의 2승
+            console.log(Math.pow(2, 2))
+
+            // sqrt : 제곱근
+            console.log(Math.sqrt(8)) // f투ㅡ 8
+            console.log(Math.sqrt(64)) 
+
+            // abs : 절댓값
+            console.log(Math.abs(-51))
+            console.log(Math.abs(51))
+
+            // max, min : 최댓값, 최솟값 구하기
+            console.log(Math.max(5, 3, 23, 28, 1, 56, 14))
+            console.log(Math.min(5, 3, 23, 28, 1, 56, 14))
+
+            // random : 난수 발생
+            console.log(Math.random())
+
+            var dice1 = Math.trunc(Math.random() * 6) + 1
+            var dice2 = Math.trunc(Math.random() * 6) + 1
+
+            console.log(dice1 + "\t" + dice2)
+
+            // 임의의 정수를 생성해주는 함수
+            function randomNum(min, max){
+                return Math.floor(Math.random() * (max-min + 1)) + min 
+            }
+
+            console.log(randomNum(5, 10))
+
+        </script>
+    </body>
+</html>

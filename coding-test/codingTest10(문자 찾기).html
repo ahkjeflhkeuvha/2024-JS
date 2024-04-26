@@ -6,8 +6,20 @@
         <script>
             function solution(s, t){
                 let answer = s.replaceAll(t, '')
+                let answer2 = 0
 
-                return s.length - answer.length
+                let answer3 = s.split('')
+                answer3 = answer3.filter((a)=>{
+                    return a === t
+                })
+                
+                for(let x of s) {
+                    if(x === t) answer2++
+                }
+
+                return console.log(s.length - answer.length + "\t" + answer2 + "\t" + answer3.length)
+
+    
             }
             let str = "COMPUTERPROGRAMMING"
             console.log(solution(str, 'R'));

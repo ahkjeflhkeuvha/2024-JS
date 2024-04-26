@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>대문자 찾기</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer = 0
+                for(let x of s){
+                    if(x === x.toUpperCase()) answer++
+                } // 방법 1
+
+                return s.split('').filter((a) => a >= 'A' && a <= 'Z').length + "\t" + answer // 방법 2
+            }
+            let str = "KoreaTimeGood"
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
