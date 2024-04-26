@@ -6,11 +6,21 @@
         <script>
             function solution(s){
                 let answer = ""
-                answer = s.replaceAll("A", "#")
+
+                for(let x of s){
+                    if(x === 'A') answer += '#'
+                    else answer += x
+                }
+                // 방법 1
+
+                answer = s.replace(/A/gi, "#")
+                // 방법 2
+
                 return answer
             }
             let str = "BANANA"
             console.log(solution(str));
+            console.log(solution('banana'))
         </script>
     </body>
 </html>
