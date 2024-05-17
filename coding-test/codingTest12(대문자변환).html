@@ -10,6 +10,11 @@
                 for (var i of str) {
                     if(i === i.toUpperCase()) answer += i.toLowerCase()
                     else answer += i.toUpperCase()
+                } // 방법 1
+
+                for (var i of str) {
+                    if(i.charCodeAt() >= 'A' && i.charCodeAt() <= 'Z') answer += String.fromCharCode(i.charCodeAt() + 32)
+                    else answer += String.fromCharCode(i.charCodeAt() - 32)
                 }
                 return answer
             }
