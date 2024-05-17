@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Window 객체</title>
+    </head>
+    <body>
+        <script>
+            // Window는 내장 객체 -> 아무짓 안 해도 그냥 준다~~
+            // console.log(window)
+
+            //window.alert("BTS 화이팅") // 알람창 - > window 생략 가능
+            //alert("아이디를 입력해주세요")
+
+            //var ans = confirm("정말로 탈퇴하시겠습니까?") // 확인/취소 버튼 
+            //console.log(ans)
+
+            //if(confirm("정말로 탈퇴하시겠습니까?")){
+            //    console.log("탈퇴완료")
+            //}
+
+            // var str = prompt("당신이 좋아하는 연예인은??")
+            // if(str === null){
+            //    alert("null은 안 됩니다;")
+            // } else {
+            //    console.log(str)
+            // }
+
+            // window.open("https://naver.com")
+
+            // window.print() // 현재 프린트 출력
+
+            // setTimeout(a, b) -> a에는 setTimeout을 호출할 함수, b에는 몇 초 후 호출할 지
+            // setTimeout(function(){
+            //    console.log("3초 후...")
+            // }, 3000)
+            
+            // 계속 호출은 setInterval(a, b) -> a에는 setInterval을 호출할 함수, b에는 몇 초 후 호출할 지
+            var i = 1
+            var cntSec = setInterval(function(){
+                console.log(i++)
+
+                if(i === 10) clearInterval(cntSec)
+            }, 1000)
+
+        </script>
+    </body>
+</html>
