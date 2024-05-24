@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                var start = (str.length%2 == 0) ? Math.trunc(str.length/2) - 1 : Math.trunc(str.length/2)
+                var len = (str.length%2 == 0) ? 2 : 1
+                let answer = str.substr(start, len)
+
+
+                // 규티
+                let mid = Math.floor(str.length/2)
+
+                if(str.length %2 == 0){
+                    answer = str.substring(mid-1, mid+1)
+                } else {
+                    answer = str.substring(mid, mid+1)
+                }
+
+                
+                return answer
+            }
+            let str = "stsudy"
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
