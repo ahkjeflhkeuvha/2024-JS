@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                let answer = ""
+                let answer1 = ""
+
+                for (var i of str){
+                    if(!answer.includes(i)) answer += i
+                }
+
+                for (var i of str){
+                    if(answer1.replace(i, "").length == answer1.length) answer1 += i
+                }
+                
+                console.log(answer1)
+                return answer
+            }
+            let str = "ksekkset"
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

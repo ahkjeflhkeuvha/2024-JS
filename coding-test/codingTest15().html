@@ -5,10 +5,9 @@
     <body>
         <script>
             function solution(str){
-                var start = (str.length%2 == 0) ? Math.trunc(str.length/2) - 1 : Math.trunc(str.length/2)
+                var start = (str.length%2 == 0) ? Math.floor(str.length/2) - 1 : Math.floor(str.length/2)
                 var len = (str.length%2 == 0) ? 2 : 1
                 let answer = str.substr(start, len)
-
 
                 // 규티
                 let mid = Math.floor(str.length/2)
@@ -22,7 +21,7 @@
                 
                 return answer
             }
-            let str = "stsudy"
+            let str = "stsdy"
             console.log(solution(str));
         </script>
     </body>
