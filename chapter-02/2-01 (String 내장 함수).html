@@ -37,7 +37,7 @@
             
             var year = person1.substring(0, person1.indexOf('-'))
             var month = person1.substring(person1.indexOf('-') + 1, person1.lastIndexOf('-'))
-            var day = person1.substring(person1.lastIndexOf('-') + 1, person1.length)
+            var day = person1.substring(person1.lastIndexOf('-') + 1)
 
             console.log(year + "\t" + month + "\t" + day)
 
@@ -82,6 +82,7 @@
             var txt2 = "World"
             console.log(str1.padStart(8, 0))
             console.log(str1.padEnd(10, 'a'))
+            
             // 앞에 0을 채워넣어줌
             // padEnd하면 뒤에 0을 채워 넣어줌
 
@@ -94,7 +95,7 @@
 
             // charAt
 
-            // 특정한 값을 가지고 있는 지 확인
+            // 특정한 값을 가지고 있는 지 확인 - contains
             var str1 = "Hello World"
             console.log(str1.charAt(0))
             console.log(str1.charAt(6))

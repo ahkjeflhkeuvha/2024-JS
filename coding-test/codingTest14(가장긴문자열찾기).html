@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>가장 긴 문자열 찾기</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                let answer = arr[0]
+                
+                for(var i of arr){
+                    if(i.length > answer.length) answer = i
+                }
+
+                var ar = arr.sort((a,b)=>{
+                    return a.length - b.length
+                })[arr.length - 1]
+
+                console.log(arr.sort(function(a,b){
+                    return b.length - a.length
+                })[0])
+
+                return answer
+            }
+            var arr = ["teacher", "time", "student", "beautiful", "good"]
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>

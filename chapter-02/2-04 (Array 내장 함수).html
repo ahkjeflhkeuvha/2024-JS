@@ -159,13 +159,18 @@
                 {firstName : "세찬", lastName : "양", email : "sheep@gmail.com"},
                 {firstName : "동훈", lastName : "하", email : "babyBoss@gmail.com"},
                 {firstName : "지효", lastName : "송", email : "Song@gmail.com"},
-            ]
+            ] 
 
             var userList = person.map(function(user){
                 return {firstName : user.firstName, lastName : user.lastName, fullName : user.lastName + user.firstName}
             })
 
             console.log(userList)
+
+            var num = [1, 5, 9, 51, 94, 33, 57]
+            console.log(num.map(function(a){
+                return String(a).padEnd(3, "*")
+            }))
 
 
 
