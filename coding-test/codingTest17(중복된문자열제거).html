@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>중복된 문자열 제거</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                let answer = []
+                let answer2 = []
+                let answer3 = []
+
+                for (var i of arr){
+                    if(answer.indexOf(i) < 0) answer.push(i)
+                }
+
+                for(var i = 0; i<arr.length; i++){
+                    if(i == arr.indexOf(arr[i])) answer2.push(arr[i])
+                }
+
+                for(var i of arr){
+                    if(!answer3.includes(i)) answer3.push(i)
+                }
+
+                console.log(answer2)
+                console.log(answer3)
+                
+                return answer
+            }
+            let arr = ["good", "time", "good", "time", "student"]
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
