@@ -7,6 +7,7 @@
             function solution(str){
                 let answer = ""
                 let answer1 = ""
+                let answer2 = ""
 
                 for (var i of str){
                     if(!answer.includes(i)) answer += i
@@ -16,11 +17,36 @@
                     if(answer1.replace(i, "").length == answer1.length) answer1 += i
                 }
                 
+                // for(var i of str){
+                //    if(answer2.indexOf(i) < 0) answer2 += i
+                // }
+
+                // 규티 방법 - indexOf 함수 이용
+                // indexOf('k', 1) 하게 되면 1번 인덱스부터 시작이다~~!!
+                for(let i = 0; i<str.length; i++){
+                    if(i == str.indexOf(str[i])) answer2 += str[i]
+                }
+            
+                // 추가 문제!!
+                var answer3 = 0
+                var s = prompt("찾으시는 문자열을 입력하세요")
+
+                var pos = str.indexOf(s)
+
+                while(pos != -1){
+                    answer3++
+                    pos = str.indexOf(s, pos + 1)
+
+                }
+                alert(answer3)
+
                 console.log(answer1)
+                console.log(answer2)
                 return answer
             }
             let str = "ksekkset"
             console.log(solution(str));
+            console.log(solution("good"))
         </script>
     </body>
 </html>
