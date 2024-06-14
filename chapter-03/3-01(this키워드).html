@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>this 키워드</title>
+    </head>
+    <body>
+        <!-- <button onclick="fullName()">click it!</button> -->
+        <button onclick="this.style.backgroundColor='red'">click it</button>
+        <!-- 태그의 경우 버튼 색이 바뀜 => this가 태그를 가리킴 -->
+        <button onclick="callFunc(this)">cilck it222</button>
+        <select name="" id="" onchange="callSelect(this)">
+            <option value="ㅋ">1</option>
+            <option value="ㅋㅋ">2</option>
+            <option value="ㅋㅋㅋ">3</option>
+        </select>
+        
+        <script>
+            // this 단독은 윈도우 객체!!
+            
+            // console.log(this)
+            // alert("가방사러가자~!!!")
+            // console.log(window)
+
+            function fullName() {
+                console.log("집가고시퍼@@")
+                // console.log(this) // 함수 내에서도 this는 윈도우를 가리킨다!!!!!!
+            }
+
+            function callFunc(obj){
+                // alert("ㅋㅋㅋㅋㅋㅋㅋ")
+                // this.style.backgroundColor = "red"
+                console.log(obj)
+            }
+
+            function callSelect(obj){
+                console.log(obj)
+                // select 태그 전체 가져오기
+                console.log(obj.value)
+                // select 내 선택된 태그의 값 가져오기
+            }
+
+            var person = {
+                firstName : "길동",
+                lastName : "홍", 
+                age : 23,
+                fullName : function() {
+                    return this.lastName + "" + this.firstName
+                }
+            }
+
+            console.log(person.fullName()) // js는 객체에 함수를 넣어줄 수 있다.
+
+
+
+
+
+            
+
+        </script>
+    </body>
+</html>
