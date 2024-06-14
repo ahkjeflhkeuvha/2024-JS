@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>중복된 문자열 제거</title>
+        <title>중복된 문자열 제거 - 시험범위 끝!!</title>
     </head>
     <body>
         <script>
@@ -21,8 +21,13 @@
                     if(!answer3.includes(i)) answer3.push(i)
                 }
 
+                // 규티 방법
+                var answer4 = arr.filter((a, i) => arr.indexOf(a) == i)
+             
+
                 console.log(answer2)
                 console.log(answer3)
+                console.log(answer4)
                 
                 return answer
             }
