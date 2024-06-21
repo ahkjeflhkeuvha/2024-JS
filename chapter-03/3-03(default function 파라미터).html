@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>default function parameter</title>
+    </head>
+    <body>
+        <script>/*
+            function say1(){
+                alert("안녕하시오~")
+            }
+            say1()
+
+            function say2(message="안녕하세요"){
+                alert(message)
+            }
+            say2("안녕하시오~~")
+            say2()
+
+            function plus1(a, b){
+                console.log(a+b)
+            }
+            plus1(1, 2)
+            plus1(1)
+            */
+
+            // default function parameter
+            function say3(message="매개변수가 없습니다."){
+                console.log(message)
+            }
+            say3("hello")
+            say3()
+
+            function plus2(a=0, b=0){
+                console.log(a+b)
+            }
+            plus2(1, 2)
+            plus2(1)
+
+        </script>
+    </body>
+</html>

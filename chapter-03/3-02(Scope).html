@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Scope</title>
+    </head>
+    <body>
+        <script>
+            function myFunction(){
+                // Local Scope
+                var carName1 = "기아자동차"
+                console.log(carName1)
+            }
+
+            // console.log(carName1) -> carName은 지역변수이기 때문에 사용이 안 된다ㅜㅜ
+            myFunction()
+
+            var carName2 = "현대자동차" // -> global Scopre : 전역변수
+            myFunction2() // 나온다!!!! 컴파일러는 함수를 미리 컴파일 해 놓고 순차적으로 컴파일해준다~~
+
+            function myFunction2(){
+                console.log(carName2)
+            }
+            console.log(carName2) // carName2는 전역변수이기 때문에 사용이 가능하다~!!
+            myFunction2()
+            
+            // myFunction3() -> 이건 안 나옴 -> myFunction3는 미리 컴파일이 되어있지 않다~~ 
+            var myFunction3 = function (){
+                console.log("myFunction3 호출")
+            }
+            myFunction3() // -> 이건 가능
+
+
+
+            
+        </script>
+    </body>
+</html>
