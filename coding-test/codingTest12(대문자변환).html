@@ -16,6 +16,18 @@
                     if(i.charCodeAt() >= 'A' && i.charCodeAt() <= 'Z') answer += String.fromCharCode(i.charCodeAt() + 32)
                     else answer += String.fromCharCode(i.charCodeAt() - 32)
                 }
+
+                for(var s of str){
+                    if(s === s.toUpperCase()) answer += s.toLowerCase()
+                    else answer += s.toLowerCase()
+                }
+
+                for(var n of str){
+                    var charCode = n.charCodeAt()
+                    if(charCode >= 'a' && charCode <= 'z') answer += String.fromCharCode(charCode - 32)
+                    else answer += String.fromCharCode(charCode + 32)
+                }
+
                 return answer
             }
             let str = "ItisTimeToStudy"

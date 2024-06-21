@@ -20,11 +20,22 @@
                 let max = (a > b) ? a : b
                 if(max < c) max = c
 
-                let sum = a + b + c
+                var sum = a + b + c
                 
                 if(max < sum - max) answer = "yes"
                 else answer = "no"
                 
+                var sum = a+b+c
+                var maxNum
+
+                if(a > b) maxNum = a
+                else maxNum = b
+
+                if(c > maxNum) maxNum = c
+
+                if(maxNum < sum - maxNum) answer = "yes"
+                else answer = "no"
+
                 return answer
             }
             console.log(solution(6, 7, 11));

@@ -16,6 +16,11 @@
 //                }
 
 
+                var minNum = arr[0]
+                for(var num of arr){
+                    if(minNum > num) num = minNum
+                }
+
                 // 전개 연산자 사용
                 return Math.min(...arr)
             }

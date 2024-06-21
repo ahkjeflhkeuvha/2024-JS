@@ -36,7 +36,17 @@
                 while(pos != -1){
                     answer3++
                     pos = str.indexOf(s, pos + 1)
+                }
 
+                var pos = str.indexOf(s)
+
+                while(pos != -1){
+                    answer++
+                    pos = pos.indexOf(s, pos + 1)
+                }
+
+                for(var i in str){
+                    if(i == str.indexOf(str[i])) answer++
                 }
                 alert(answer3)
 

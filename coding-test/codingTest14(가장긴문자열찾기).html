@@ -19,6 +19,17 @@
                     return b.length - a.length // 내림차순
                 })[0])
 
+
+                var max = arr[0]
+                for(var str of arr){
+                    if(str.length > max.length) max = str
+                }
+
+
+                arr.sort((a, b) => {
+                    return b.length - a.length
+                })[0]
+
                 return answer
             }
             var arr = ["teacher", "time", "student", "beautiful", "good"]

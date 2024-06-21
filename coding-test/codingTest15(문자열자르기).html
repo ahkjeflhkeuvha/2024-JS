@@ -18,6 +18,14 @@
                     answer = str.substring(mid, mid+1)
                 }
 
+                var midst = Math.floor(str.length / 2)
+
+                if(str.length%2 == 0) answer = str.splice(midst - 1, midst + 1)
+                else answer = str.splice(midst, midst + 1)
+
+                if(str.length/2 == 0) answer = str.splice(midst-1, 2)
+                else answer = str.splice(midst, 1)
+
                 
                 return answer
             }

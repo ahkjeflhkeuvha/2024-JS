@@ -10,8 +10,14 @@
                     if(x === x.toUpperCase()) answer++
                 } // 방법 1
 
+
+                for(var str of s){
+                    if(str === str.toUpperCase()) answer++
+                }
+
                 return s.split('').filter((a) => a >= 'A' && a <= 'Z').length + "\t" + answer // 방법 2
             }
+            
             let str = "KoreaTimeGood"
             console.log(solution(str));
         </script>

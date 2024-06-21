@@ -15,6 +15,14 @@
                     }
                 }
                 
+                for(var num of arr){
+                    if(num%2 == 1){
+                        sum += num
+                        if(num < min) min = num
+                    }
+                }
+
+
                 // 배열은 push를 사용해 원소를 넣을 수 있다!!!
 
                 return [answer[0], answer[1]] = [min, sum]

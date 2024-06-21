@@ -23,6 +23,10 @@
 
                 // 규티 방법
                 var answer4 = arr.filter((a, i) => arr.indexOf(a) == i)
+
+                for(var i in arr){
+                    if(i === arr.indexOf(arr[i])) answer++
+                }
              
 
                 console.log(answer2)
