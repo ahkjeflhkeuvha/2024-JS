@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function sum1(a, b){
+                var y1 = a+b
+                console.log(y1)
+                return y1
+            }
+            // sum1(1) // NaN
+            sum1(1, 2)
+            // sum1(1, 2, 3) // 결과값이 달라짐
+
+            function sum2(a, b, c){
+                var y1 = a + b + c
+                console.log(y1)
+                return y1
+            }
+
+            // sum2(1) // NaN
+            // sum2(1, 2) // NaN
+            sum2(1, 2, 3) 
+
+            function sumRest(...args){
+                var y1 = 0
+                /* for(num of args){
+                    y1 += num
+                } */
+                args.forEach((val, idx) => y1 += val)
+                console.log(y1)
+                return y1
+            }
+
+            sumRest(1, 2, 3)
+            sumRest(1, 2, 3, 4, 5)
+        </script>
+    </body>
+</html>
