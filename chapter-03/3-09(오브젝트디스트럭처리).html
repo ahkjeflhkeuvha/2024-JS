@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>오브젝트 디스트럭 처리</title>
+    </head>
+    <body>
+        <script>
+            function getPerson(){
+                return {
+                    firstName : "홍",
+                    lastName : "길동",
+                    age : 23,
+                    email : "hong@gmail.com",
+                    city : "seoul",
+                    country : "korea"
+                }
+            }
+
+            var {firstName, lastName} = getPerson()
+            console.log(firstName)
+            console.log(lastName)
+        </script>
+    </body>
+</html>
