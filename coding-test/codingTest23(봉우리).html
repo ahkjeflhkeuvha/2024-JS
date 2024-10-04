@@ -9,20 +9,19 @@
 
                 let chkIdx = [[-1, 0], [0, -1], [0, 1], [1, 0]]
                 
-                var flug = true
                 for(var i = 0; i<arr.length; i++){
                     for(var j = 0; j<arr.length; j++){
                         var num = arr[i][j] // 값 하나하나 가져오고
+                        var flug = true
                         for(var k = 0; k<chkIdx.length; k++){ // 8개 칸 확인
                             var chkRow = i + chkIdx[k][0]
                             var chkCol = j + chkIdx[k][1]
                             
-                            if(chkRow >= 0 && chkRow < arr.length && chkCol >= 0 && chkCol < arr.length){
-                                if(num > arr[chkRow][chkCol]) flug = true
-                                else {
+                            if(chkRow >= 0 && chkRow < arr.length && chkCol >= 0 && chkCol < arr.length){ // 0보다 작아지거나 arr.length를 넘어가게 되면 취급 안 함
+                                if(num <= arr[chkRow][chkCol]) {
                                     flug = false
                                     break
-                                }z
+                                }
                             }
                         }
                         if(flug == true) answer++
