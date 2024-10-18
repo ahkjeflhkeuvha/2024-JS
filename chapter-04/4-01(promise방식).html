@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>promise 약속</title>
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+        <script>
+            // 프로토콜 -> 통신규약
+            var url = "https://78aeb894-7efa-4ce7-a6fe-5ef1b0f62dab.mock.pstmn.io/productList"
+
+            // var data = axios.get(url)
+            // .then((res) => function(res) {
+            //     console.log(res)
+            //     return
+            // })
+
+            // function getData(){
+            //     return new Promise(function(resolve, reject) {
+            //         axios.get(url).then(function(res){
+            //             console.log(res.data)
+            //             resolve(res.data.products)
+            //         })
+            //     }) // 정상적인 값은 resolve, 비정상적인 값은 reject
+            // }
+
+            // var tot = 0
+
+            // getData().then(function(data){
+            //     for(item of data.products){
+            //         tot += item.price
+            //     }
+            // })
+
+            // console.log(tot)
+
+            // async await 방식
+            async function getData(){
+                return await axios.get(url).data
+            } // async await는 짝꿍
+
+            let tot = 0
+
+            async function calculateSum(){
+                const response = await getData()
+
+                for(data of response["products"]){
+                    tot += data["price"]
+                }
+            }
+
+            calculateSum()
+
+        </script>
+    </body>
+</html>
