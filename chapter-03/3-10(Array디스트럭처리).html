@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Array 디스트럭 처리</title>
+    </head>
+    <body>
+        <script>
+            function getScore(){
+                return [70, 80, 90]
+            }
+
+            var arr = getScore()
+            console.log(arr[1])
+
+            var [x, y, z] = getScore()
+            console.log(x, y, z)
+
+            var [x, y] = getScore()
+            console.log(x, y)
+            
+            function getLocation(){
+                return [123.025, 864.3518]
+            }
+
+            var [x, y] = getLocation()
+            console.log("위도 : " + x + "  경도 : " + y)
+
+        </script>
+    </body>
+</html> 
