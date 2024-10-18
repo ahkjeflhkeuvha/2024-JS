@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>회문문자열</title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                let answer = "YES"
+
+                str = str.toUpperCase()
+                var strlen = str.length - 1
+                for(var i = 0; i<str.length/2; i++){
+                    if(str[i] === str[strlen - i]) continue;
+                    else {
+                        answer = "NO"
+                        break
+                    }
+                }
+
+                var str2 = str.toUpperCase().split('').reverse().join('')
+
+                if(str === str2) return "YES"
+                else return "NO"
+                
+                return answer
+            }
+            var str = "gooG"
+            var stu = "studEnT"
+            
+            console.log(solution(str));
+            console.log(solution(stu));
+        </script>
+    </body>
+</html>
