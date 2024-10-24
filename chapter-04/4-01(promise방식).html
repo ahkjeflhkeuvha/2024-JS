@@ -3,52 +3,53 @@
         <title>promise 약속</title>
     </head>
     <body>
-        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script>
-            // 프로토콜 -> 통신규약
             var url = "https://78aeb894-7efa-4ce7-a6fe-5ef1b0f62dab.mock.pstmn.io/productList"
 
-            // var data = axios.get(url)
-            // .then((res) => function(res) {
-            //     console.log(res)
-            //     return
-            // })
+            // Promise를 사용한 방식
+            function getData() {
+                return new Promise(function(resolve, reject) {
+                    axios.get(url).then(function(res) {
+                        console.log(res.data)  // 전체 응답 출력
+                        resolve(res.data.products)  // 정상적인 값은 resolve로 products 반환
+                    }).catch(function(error) {
+                        reject(error)  // 오류가 발생하면 reject로 에러 반환
+                    })
+                })  // 정상적인 값은 resolve, 비정상적인 값은 reject
+            }
 
-            // function getData(){
-            //     return new Promise(function(resolve, reject) {
-            //         axios.get(url).then(function(res){
-            //             console.log(res.data)
-            //             resolve(res.data.products)
-            //         })
-            //     }) // 정상적인 값은 resolve, 비정상적인 값은 reject
-            // }
+            var tot = 0
 
-            // var tot = 0
+            getData().then(function(data) {  // Promise 결과를 처리하는 then
+                for (let item of data) {  // products 배열을 순회하면서 합계 계산
+                    tot += item.price
+                }
+                console.log("Total price: ", tot)  // 합계를 출력
+            }).catch(function(error) {
+                console.error("Error fetching data:", error)  // 에러 발생 시 출력
+            })
 
-            // getData().then(function(data){
-            //     for(item of data.products){
-            //         tot += item.price
-            //     }
-            // })
-
-            // console.log(tot)
-
-            // async await 방식
             async function getData(){
-                return await axios.get(url).data
-            } // async await는 짝꿍
+                const response = await axios.get(url)  // 전체 응답을 받아야 함
+                return response.data.products  // response.data에서 products에 접근
+            }
 
             let tot = 0
 
             async function calculateSum(){
-                const response = await getData()
+                const response = await getData()  // products 데이터를 가져옴
 
-                for(data of response["products"]){
+                console.log(response)  // products 데이터를 출력
+
+                for(let data of response){  // products 배열을 순회하면서 합계를 계산
                     tot += data["price"]
                 }
+
+                console.log("Total price: ", tot)  // 계산된 합계를 출력
             }
 
-            calculateSum()
+            calculateSum()  // 함수를 호출하여 합계 계산
 
         </script>
     </body>
