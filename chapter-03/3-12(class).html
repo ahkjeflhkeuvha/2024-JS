@@ -31,10 +31,43 @@
                 this.price = price;
             }
         }
+
+        // 객체는 new한 만큼 생성됨
         let car = new Car("아이오닉", "2021", "e", 4000);
         console.log(car.getModelName());
         console.log(car.getModelYear());
         console.log(car.getPrice());
+
+
+        let car1 = new Car("제네시스", "2022", "e", 4500); // Car로 안 받고 let, var와 같이 받음
+        console.log(car.getModelName())
+        console.log(car.getModelYear())
+        car.setPrice(5000)
+        console.log(car.getPrice())
+
+        class ElectronicCar extends Car {
+            constructor(modelName, modelYear, price, time){
+                super(modelName, modelYear, "e", price)
+                this.time = time
+            }
+
+            getTime(){
+                return this.time
+            }
+            
+            setTime(time){
+                this.time = time
+            }
+        }
+
+        var car2 = new ElectronicCar("테슬라", "2024", 10000, 2)
+        console.log(car2.getModelName())
+        console.log(car2.getModelYear())
+        console.log(car2.getPrice())
+        console.log(car2.getType())
+        console.log(car2.getTime())
+        car2.setTime(1)
+        console.log(car2.getTime())
     </script>
 </body>
 </html>
