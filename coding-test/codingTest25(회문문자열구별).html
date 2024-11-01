@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function solution(str1){
+            
+            
+            
+            
+            str = str.toLowerCase().replace(/[^a-z]/g, "");
+            
+            
+            for(var i=0, j=str.length-1; i<j ; i++, j--){
+                if(str[i] !== str[j])  return "No"
+            }
+            return "Yes";
+        }
+
+        let str = "found9Dnuo'{;f";
+        console.log(solution(str));
+    </script>
+</body>
+</html>

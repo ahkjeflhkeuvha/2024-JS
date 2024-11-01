@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function solution(str){
+            
+            //str = str.replace(/[^0-9]/g, "");
+            let ss = ""
+            for(x of str){
+                if(0<=x &&x<=9){
+                    ss += x
+                }
+            }
+            //console.log(str);
+            //str = parseInt(str);
+            //console.log(ss);
+            //ss = parseInt(ss);
+            //console.log(ss);
+            answer = 0
+            // 방법2
+            for(let x of str){
+                if(!isNaN(x)){
+                    answer = answer*10 + Number(x);
+                }
+            }
+            console.log(answer);
+        }
+
+        let str = "found9Dnuo'{;f";
+        console.log(solution(str));
+    </script>
+</body>
+</html>
