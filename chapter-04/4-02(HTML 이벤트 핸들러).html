@@ -8,14 +8,35 @@
 <body>
     focus: blur;
     <br>
-    <input type="text" id="text1">
+    <input type="text" id="text1" onfocus="inputFocus()" onblur="doBlur()">
     <br>
 
     <input type="button" value="클릭" onclick="doClick()">
 
+    <input type="text" id="text2">
+
+    <select onchange="doChange(this)" id="select">
+        <option value="ko">한국</option>
+        <option value="ja">일본</option>
+        <option value="ch">중국</option>
+    </select>
+
     <script>
         function doClick() {
             alert("[버튼] 클릭");
+        }
+
+        function inputFocus(){
+            console.log("focus")
+        }
+
+        function doBlur(){
+            console.log("blur focus")
+        }
+
+        
+        function doChange(obj){
+            console.log(obj.value)
         }
     </script>
 </body>
