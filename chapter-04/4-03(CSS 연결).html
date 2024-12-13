@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>HTML Element 컨트롤</title>
+</head>
+<body>
+
+    <button onclick="changeBackground()"></button>
+    <script>
+        let color = ["red", "pink", "yellow", "green"]
+        let i = 0
+        function changeBackground() {
+            document.body.style.backgroundColor = color[i++%4]
+        }
+    
+    </script>
+</body>
+</html>

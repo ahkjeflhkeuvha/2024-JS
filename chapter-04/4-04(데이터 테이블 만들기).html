@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>데이터 테이블 만들기</title>
+</head>
+<body>
+    <input type="text" id="searchTxt">
+    <input type="button" id="searchButton" value="조회">
+    
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>이메일</th>
+                <th>회사</th>
+                <th>주소</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/script-code/4-04.js"></script>
+    <script>
+        const searchInput = document.querySelector("#searchTxt")
+        const searchButton = document.querySelector("#searchButton")
+        const tableBody = document.querySelector("#tbody")
+        let searchedData
+
+        const searchButtonClick = () => {
+            const searchInputValue = searchInput.value
+            console.log(searchInputValue)
+            if(searchInputValue == "") searchedData = userList
+            else searchedData = userList.filter((user) => user.name.includes(searchInputValue) || user.email.includes(searchInputValue) || user.company.includes(searchInputValue) || user.address.includes(searchInputValue))
+            
+            renderTable(searchedData)
+        }
+        
+        const renderTable = (datas) => {
+            tableBody.innerHTML = ""
+            for(data of datas){
+                const {name, email, company, address} = data
+                let userDatas = [name, email, company, address]
+                // console.log(userData)
+                const newTr = document.createElement("tr")
+                userDatas.forEach((userData) => {
+                    const newTd = document.createElement("td")
+                    newTd.textContent = userData
+                    newTr.appendChild(newTd)
+                })
+                tableBody.appendChild(newTr)
+                // console.log(name, email, company, address)
+            }
+        }
+        renderTable(userList)
+        searchButton.onclick = () => searchButtonClick()
+    </script>
+</body>
+</html>
