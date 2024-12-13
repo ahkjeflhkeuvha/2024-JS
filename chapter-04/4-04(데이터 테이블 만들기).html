@@ -9,10 +9,10 @@
     <table>
         <thead>
             <tr>
-                <th>이름</th>
-                <th>이메일</th>
-                <th>회사</th>
-                <th>주소</th>
+                <th onclick="dataSort('name')">이름</th>
+                <th onclick="dataSort('email')">이메일</th>
+                <th onclick="dataSort('company')">회사</th>
+                <th onclick="dataSort('address')">주소</th>
             </tr>
         </thead>
         <tbody id="tbody">
@@ -27,34 +27,56 @@
         const searchButton = document.querySelector("#searchButton")
         const tableBody = document.querySelector("#tbody")
         let searchedData
+        let filteredData = userList
 
         const searchButtonClick = () => {
-            const searchInputValue = searchInput.value
-            console.log(searchInputValue)
+            const searchInputValue = searchInput.value.toLowerCase()
             if(searchInputValue == "") searchedData = userList
-            else searchedData = userList.filter((user) => user.name.includes(searchInputValue) || user.email.includes(searchInputValue) || user.company.includes(searchInputValue) || user.address.includes(searchInputValue))
-            
+            else searchedData = userList.filter((user) => user.name.toLowerCase().includes(searchInputValue) || user.email.toLowerCase().includes(searchInputValue) || user.company.toLowerCase().includes(searchInputValue) || user.address.toLowerCase().includes(searchInputValue))
+            filteredData = searchedData
             renderTable(searchedData)
+        }
+
+        const onKeyDown = (event) => {
+            if(event.keyCode == 13) searchButtonClick()
+        }
+
+        const onChange = () => {
+            searchButtonClick()
+        }
+
+        const dataSort = (type) => {
+            // console.log(type)
+            filteredData = filteredData.sort((a, b) => {
+                return a[type] < b[type] ? -1 : a[type] > b[type] ? 1 : 0
+            })
+            renderTable(filteredData)
         }
         
         const renderTable = (datas) => {
             tableBody.innerHTML = ""
-            for(data of datas){
-                const {name, email, company, address} = data
-                let userDatas = [name, email, company, address]
-                // console.log(userData)
-                const newTr = document.createElement("tr")
-                userDatas.forEach((userData) => {
-                    const newTd = document.createElement("td")
-                    newTd.textContent = userData
-                    newTr.appendChild(newTd)
-                })
-                tableBody.appendChild(newTr)
-                // console.log(name, email, company, address)
+            if(datas.length == 0) {
+                renderTable(userList)
+            } else {
+                for(data of datas){
+                    const {name, email, company, address} = data
+                    let userDatas = [name, email, company, address]
+                    // console.log(userData)
+                    const newTr = document.createElement("tr")
+                    userDatas.forEach((userData) => {
+                        const newTd = document.createElement("td")
+                        newTd.textContent = userData
+                        newTr.appendChild(newTd)
+                    })
+                    tableBody.appendChild(newTr)
+                    // console.log(name, email, company, address)
+                }
             }
         }
         renderTable(userList)
         searchButton.onclick = () => searchButtonClick()
+        searchInput.oninput = () => onChange()
+        searchInput.onkeydown = (event) => onKeyDown(event)
     </script>
 </body>
 </html>
